@@ -54,9 +54,8 @@ BEGIN
         -- Load crm_cust_info
         start_time := NOW();
         COPY bronze.crm_cust_info
-        FROM 'C:/Program Files/PostgreSQL/16/data/sql-data-warehouse-project-main/datasets/source_crm/cust_info.csv'
-        DELIMITER ','
-        CSV HEADER;
+        FROM 'C:/sql-data-warehouse-project-main/datasets/source_crm/cust_info.csv'
+        WITH(FORMAT csv, HEADER true);
         end_time := NOW();
 
         RAISE NOTICE '>> crm_cust_info rows loaded: %', (SELECT COUNT(*) FROM bronze.crm_cust_info);
@@ -66,9 +65,8 @@ BEGIN
         -- Load crm_prd_info
         start_time := NOW();
         COPY bronze.crm_prd_info
-        FROM 'C:/Program Files/PostgreSQL/16/data/sql-data-warehouse-project-main/datasets/source_crm/prd_info.csv'
-        DELIMITER ','
-        CSV HEADER;
+        FROM 'C:/sql-data-warehouse-project-main/datasets/source_crm/prd_info.csv'
+        WITH(FORMAT csv, HEADER true);
         end_time := NOW();
 
         RAISE NOTICE '>> crm_prd_info rows loaded: %', (SELECT COUNT(*) FROM bronze.crm_prd_info);
@@ -78,9 +76,8 @@ BEGIN
         -- Load crm_sales_details
         start_time := NOW();
         COPY bronze.crm_sales_details
-        FROM 'C:/Program Files/PostgreSQL/16/data/sql-data-warehouse-project-main/datasets/source_crm/sales_details.csv'
-        DELIMITER ','
-        CSV HEADER;
+        FROM 'C:/sql-data-warehouse-project-main/datasets/source_crm/sales_details.csv'
+        WITH(FORMAT csv, HEADER true);
         end_time := NOW();
 
         RAISE NOTICE '>> crm_sales_details rows loaded: %', (SELECT COUNT(*) FROM bronze.crm_sales_details);
@@ -100,9 +97,8 @@ BEGIN
         -- Load erp_cust_az12
         start_time := NOW();
         COPY bronze.erp_cust_az12
-        FROM 'C:/Program Files/PostgreSQL/16/data/sql-data-warehouse-project-main/datasets/source_erp/cust_az12.csv'
-        DELIMITER ','
-        CSV HEADER;
+        FROM 'C:/sql-data-warehouse-project-main/datasets/source_erp/cust_az12.csv'
+        WITH(FORMAT csv, HEADER true);
         end_time := NOW();
 
         RAISE NOTICE '>> erp_cust_az12 rows loaded: %', (SELECT COUNT(*) FROM bronze.erp_cust_az12);
@@ -112,9 +108,8 @@ BEGIN
         -- Load erp_loc_a101
         start_time := NOW();
         COPY bronze.erp_loc_a101
-        FROM 'C:/Program Files/PostgreSQL/16/data/sql-data-warehouse-project-main/datasets/source_erp/loc_a101.csv'
-        DELIMITER ','
-        CSV HEADER;
+        FROM 'C:/sql-data-warehouse-project-main/datasets/source_erp/loc_a101.csv'
+        WITH(FORMAT csv, HEADER true);
         end_time := NOW();
 
         RAISE NOTICE '>> erp_loc_a101 rows loaded: %', (SELECT COUNT(*) FROM bronze.erp_loc_a101);
@@ -124,9 +119,8 @@ BEGIN
         -- Load erp_px_cat_g1v2
         start_time := NOW();
         COPY bronze.erp_px_cat_g1v2
-        FROM 'C:/Program Files/PostgreSQL/16/data/sql-data-warehouse-project-main/datasets/source_erp/px_cat_g1v2.csv'
-        DELIMITER ','
-        CSV HEADER;
+        FROM 'C:/sql-data-warehouse-project-main/datasets/source_erp/px_cat_g1v2.csv'
+        WITH(FORMAT csv, HEADER true);
         end_time := NOW();
 
         RAISE NOTICE '>> erp_px_cat_g1v2 rows loaded: %', (SELECT COUNT(*) FROM bronze.erp_px_cat_g1v2);
